@@ -1,4 +1,3 @@
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -25,18 +24,18 @@ final Color borderColor = HexColor("#F7F8F8");
 
 const FontWeight bold = FontWeight.w700;
 const FontWeight semiBold = FontWeight.w600;
-const FontWeight regular = FontWeight.w500;
-const FontWeight light = FontWeight.w400;
+const FontWeight medium = FontWeight.w500;
+const FontWeight regular = FontWeight.w400;
 
-final TextStyle h1 = GoogleFonts.poppins(fontSize: 26);
-final TextStyle h2 = GoogleFonts.poppins(fontSize: 24);
-final TextStyle h3 = GoogleFonts.poppins(fontSize: 22);
-final TextStyle h4 = GoogleFonts.poppins(fontSize: 20);
+const TextStyle h1 = TextStyle(fontFamily: "Poppins", fontSize: 26);
+const TextStyle h2 = TextStyle(fontFamily: "Poppins", fontSize: 24);
+const TextStyle h3 = TextStyle(fontFamily: "Poppins", fontSize: 22);
+const TextStyle h4 = TextStyle(fontFamily: "Poppins", fontSize: 20);
 
-final TextStyle subtitle = GoogleFonts.poppins(fontSize: 18);
+const TextStyle subtitle = TextStyle(fontFamily: "Poppins", fontSize: 18);
 
-final TextStyle largeText = GoogleFonts.poppins(fontSize: 16);
-final TextStyle mediumText = GoogleFonts.poppins(fontSize: 14);
-final TextStyle smallText = GoogleFonts.poppins(fontSize: 12);
+const TextStyle largeText = TextStyle(fontFamily: "Poppins", fontSize: 16);
+const TextStyle mediumText = TextStyle(fontFamily: "Poppins", fontSize: 14);
+const TextStyle smallText = TextStyle(fontFamily: "Poppins", fontSize: 12);
 
-final TextStyle caption = GoogleFonts.poppins(fontSize: 10);
+const TextStyle caption = TextStyle(fontFamily: "Poppins", fontSize: 10);

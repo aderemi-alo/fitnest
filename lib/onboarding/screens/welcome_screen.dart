@@ -1,6 +1,8 @@
+import 'package:fitnest/onboarding/screens/onboarding.dart';
 import 'package:flutter/material.dart';
 import 'package:fitnest/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -19,16 +21,19 @@ class WelcomeScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SvgPicture.asset("assets/images/FitnestXlogo.svg"),
-                      SizedBox(height: 5),
-                      Text(
-                        "Everybody Can Train",
-                        style: subtitle.copyWith(color: gray1),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 15.0),
+                        child: Text(
+                          "Everybody Can Train",
+                          style: subtitle.copyWith(color: gray1),
+                        ),
                       )
                     ],
                   ),
                 ),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () =>
+                      Get.to(Onboarding(), transition: Transition.rightToLeft),
                   child: Container(
                     height: 60,
                     width: 315,
