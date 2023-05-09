@@ -38,6 +38,12 @@ class WelcomeScreen extends StatelessWidget {
                     height: 60,
                     width: 315,
                     decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.transparent.withOpacity(0.15),
+                              blurRadius: 22,
+                              offset: Offset(0, 10)),
+                        ],
                         gradient: blueLinear,
                         borderRadius: BorderRadius.circular(99)),
                     child: Center(

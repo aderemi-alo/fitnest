@@ -1,3 +1,4 @@
+import 'package:fitnest/authentication/screens/create_account.dart';
 import 'package:fitnest/onboarding/screens/onboarding_page4.dart';
 import 'package:fitnest/onboarding/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
@@ -61,9 +62,9 @@ class _OnboardingState extends State<Onboarding> {
                   pageIndex++;
                   valueNotifier.value = pageIndex * 25;
                   onLastPage
-                      ? Get.to(WelcomeScreen())
+                      ? Get.to(CreateAccount())
                       : _pageController.nextPage(
-                          duration: Duration(milliseconds: 500),
+                          duration: const Duration(milliseconds: 500),
                           curve: Curves.easeInOut);
                 });
               },
