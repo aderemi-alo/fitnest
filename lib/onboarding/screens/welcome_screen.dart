@@ -2,7 +2,7 @@ import 'package:fitnest/onboarding/screens/onboarding.dart';
 import 'package:flutter/material.dart';
 import 'package:fitnest/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fitnest/custom_widgets.dart';
+import 'package:fitnest/widgets/custom_widgets.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -31,8 +31,11 @@ class WelcomeScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                const CustomBlueButton(
-                  buttonText: "Get Started",
+                CustomBlueButton(
+                  buttonText: Text(
+                    "Get Started",
+                    style: largeText.copyWith(fontWeight: bold, color: white),
+                  ),
                   page: Onboarding(),
                 )
               ],

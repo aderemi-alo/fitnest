@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:fitnest/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
-import 'package:fitnest/custom_widgets.dart';
-import 'package:get/get.dart';
+import 'package:fitnest/widgets/custom_widgets.dart';
 
 class CreateAccount extends StatefulWidget {
   const CreateAccount({super.key});
@@ -174,8 +173,10 @@ class _CreateAccountState extends State<CreateAccount> {
                 ),
                 Column(
                   children: [
-                    const CustomBlueButton(
-                      buttonText: "Register",
+                    CustomBlueButton(
+                      buttonText: Text("Register",
+                          style: largeText.copyWith(
+                              fontWeight: bold, color: white)),
                       page: CompleteProfile(),
                     ),
                     const SizedBox(height: 20),
@@ -265,52 +266,6 @@ class _CreateAccountState extends State<CreateAccount> {
             ),
           ),
         ),
-      ),
-    );
-  }
-}
-
-class CustomTextField extends StatelessWidget {
-  const CustomTextField({
-    super.key,
-    required this.controller,
-    required this.iconLocation,
-    required this.hintText,
-  });
-
-  final TextEditingController controller;
-  final String iconLocation;
-  final String hintText;
-
-  @override
-  Widget build(BuildContext context) {
-    return TextFormField(
-      style: smallText.copyWith(fontWeight: regular, color: gray2),
-      controller: controller,
-      decoration: InputDecoration(
-        filled: true,
-        hintText: hintText,
-        hintStyle: smallText.copyWith(fontWeight: regular, color: gray2),
-        prefixIconConstraints: const BoxConstraints(maxHeight: 18),
-        prefixIcon: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
-          child: SvgPicture.asset(
-            iconLocation,
-            height: 18,
-            width: 18,
-            color: gray1,
-          ),
-        ),
-        enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(14),
-            borderSide:
-                const BorderSide(color: Colors.transparent, width: 0.0)),
-        prefixIconColor: gray1,
-        focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(14),
-            borderSide:
-                const BorderSide(color: Colors.transparent, width: 0.0)),
-        fillColor: borderColor,
       ),
     );
   }

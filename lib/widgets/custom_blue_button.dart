@@ -9,7 +9,7 @@ class CustomBlueButton extends StatelessWidget {
     required this.page,
   });
 
-  final String buttonText;
+  final Widget buttonText;
   final Widget page;
 
   @override
@@ -23,12 +23,7 @@ class CustomBlueButton extends StatelessWidget {
             boxShadow: [shadow],
             gradient: blueLinear,
             borderRadius: BorderRadius.circular(99)),
-        child: Center(
-          child: Text(
-            buttonText,
-            style: largeText.copyWith(fontWeight: bold, color: white),
-          ),
-        ),
+        child: Center(child: buttonText),
       ),
     );
   }
