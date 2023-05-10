@@ -1,35 +1,33 @@
-import 'package:fitnest/authentication/screens/complete_profile.dart';
-import 'package:fitnest/authentication/screens/login.dart';
-import 'package:flutter/gestures.dart';
+import 'package:fitnest/dashboard/home.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:fitnest/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:fitnest/widgets/custom_widgets.dart';
-import 'package:get/get.dart';
+import 'package:flutter/gestures.dart';
 
-class CreateAccount extends StatefulWidget {
-  const CreateAccount({super.key});
+class Login extends StatefulWidget {
+  const Login({super.key});
 
   @override
-  State<CreateAccount> createState() => _CreateAccountState();
+  State<Login> createState() => _LoginState();
 }
 
-class _CreateAccountState extends State<CreateAccount> {
-  TextEditingController firstNameController = TextEditingController();
-  TextEditingController surnameController = TextEditingController();
+class _LoginState extends State<Login> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
   bool _passwordVisible = false;
-  bool _termsAndConditions = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.only(top: 40.0, left: 30, right: 30),
+          padding: const EdgeInsets.symmetric(
+            vertical: 40,
+            horizontal: 40,
+          ),
           child: Center(
             child: Column(
               children: [
@@ -42,22 +40,10 @@ class _CreateAccountState extends State<CreateAccount> {
                       ),
                       const SizedBox(height: 5),
                       Text(
-                        "Create an Account",
+                        "Welcome Back",
                         style: h4.copyWith(fontWeight: bold),
                       ),
                       const SizedBox(height: 30),
-                      CustomTextField(
-                        controller: firstNameController,
-                        iconLocation: "assets/icons/Profileicon.svg",
-                        hintText: "First Name",
-                      ),
-                      const SizedBox(height: 15),
-                      CustomTextField(
-                        controller: surnameController,
-                        iconLocation: "assets/icons/Profileicon.svg",
-                        hintText: "Last Name",
-                      ),
-                      const SizedBox(height: 15),
                       CustomTextField(
                         controller: emailController,
                         iconLocation: "assets/icons/Messageicon.svg",
@@ -122,71 +108,30 @@ class _CreateAccountState extends State<CreateAccount> {
                         ),
                       ),
                       const SizedBox(height: 10),
-                      Row(
-                        children: [
-                          GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                _termsAndConditions = !_termsAndConditions;
-                              });
-                            },
-                            child: Icon(
-                              _termsAndConditions
-                                  ? LineAwesomeIcons.check_square
-                                  : LineAwesomeIcons.stop,
-                              color: gray1,
-                              size: 25,
-                            ),
-                          ),
-                          SizedBox(width: 10),
-                          RichText(
-                            text: TextSpan(
-                              children: [
-                                TextSpan(
-                                  text: "By continuing you accept our ",
-                                  style: caption.copyWith(
-                                    color: gray2,
-                                    fontWeight: regular,
-                                  ),
-                                ),
-                                TextSpan(
-                                  text: "Privacy Policy ",
-                                  style: caption.copyWith(
-                                    color: gray2,
-                                    fontWeight: regular,
-                                    decoration: TextDecoration.underline,
-                                  ),
-                                ),
-                                TextSpan(
-                                  text: "and ",
-                                  style: caption.copyWith(
-                                    color: gray2,
-                                    fontWeight: regular,
-                                  ),
-                                ),
-                                TextSpan(
-                                  text: "Term of Use.",
-                                  style: caption.copyWith(
-                                    color: gray2,
-                                    fontWeight: regular,
-                                    decoration: TextDecoration.underline,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
+                      Text(
+                        "Forgot your password?",
+                        style: smallText.copyWith(
+                          color: gray2,
+                          decoration: TextDecoration.underline,
+                        ),
+                      )
                     ],
                   ),
                 ),
                 Column(
                   children: [
                     CustomBlueButton(
-                      buttonText: Text("Register",
-                          style: largeText.copyWith(
-                              fontWeight: bold, color: white)),
-                      page: CompleteProfile(),
+                      buttonText: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SvgPicture.asset("assets/icons/Login.svg"),
+                          SizedBox(width: 12),
+                          Text("Login",
+                              style: largeText.copyWith(
+                                  fontWeight: bold, color: white)),
+                        ],
+                      ),
+                      page: Home(),
                     ),
                     const SizedBox(height: 20),
                     Stack(
@@ -255,7 +200,7 @@ class _CreateAccountState extends State<CreateAccount> {
                     RichText(
                         text: TextSpan(children: [
                       TextSpan(
-                          text: "Already have an account? ",
+                          text: "Don't have an account yet? ",
                           style: mediumText.copyWith(
                             fontWeight: regular,
                             color: black,
@@ -263,7 +208,7 @@ class _CreateAccountState extends State<CreateAccount> {
                       TextSpan(
                           recognizer: TapGestureRecognizer()
                             ..onTap = () => Get.to(() => Login()),
-                          text: "Login",
+                          text: "Register",
                           style: mediumText.copyWith(
                               fontWeight: regular,
                               foreground: Paint()
