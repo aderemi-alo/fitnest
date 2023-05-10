@@ -1,3 +1,5 @@
+import 'package:fitnest/dashboard/home.dart';
+import 'package:fitnest/widgets/custom_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:fitnest/constants.dart';
 import 'package:get/get.dart';
@@ -8,6 +10,47 @@ class RegistrationSuccess extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          children: [
+            Expanded(
+              child: Column(
+                children: [
+                  const SizedBox(height: 102),
+                  SvgPicture.asset("assets/images/Welcome.svg"),
+                  const SizedBox(height: 40),
+                  Text(
+                    "Welcome Stefani",
+                    style: h4.copyWith(fontWeight: bold),
+                  ),
+                  const SizedBox(height: 5),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 85.0),
+                    child: Text(
+                      "You are all set now, let’s reach your goals together with us",
+                      textAlign: TextAlign.center,
+                      style:
+                          smallText.copyWith(fontWeight: regular, color: gray1),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            CustomBlueButton(
+              buttonText: Text(
+                "Go To Home",
+                style: largeText.copyWith(
+                  fontWeight: bold,
+                  color: white,
+                ),
+              ),
+              page: Home(),
+            ),
+            const SizedBox(height: 40)
+          ],
+        ),
+      ),
+    );
   }
 }
