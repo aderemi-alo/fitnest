@@ -16,7 +16,7 @@ class CustomTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 48,
       child: TextFormField(
         textAlignVertical: TextAlignVertical.bottom,
@@ -33,7 +33,7 @@ class CustomTextField extends StatelessWidget {
               iconLocation,
               height: 18,
               width: 18,
-              color: gray1,
+              colorFilter: ColorFilter.mode(gray1, BlendMode.srcIn),
             ),
           ),
           enabledBorder: OutlineInputBorder(

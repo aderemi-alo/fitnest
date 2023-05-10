@@ -62,54 +62,61 @@ class _CreateAccountState extends State<CreateAccount> {
                         hintText: "Email",
                       ),
                       SizedBox(height: 15),
-                      TextFormField(
-                        style: smallText.copyWith(
-                            fontWeight: regular, color: gray2),
-                        obscureText: _passwordVisible,
-                        controller: passwordController,
-                        decoration: InputDecoration(
-                          filled: true,
-                          hintText: "Password",
-                          hintStyle: smallText.copyWith(
+                      SizedBox(
+                        height: 48,
+                        child: TextFormField(
+                          textAlignVertical: TextAlignVertical.bottom,
+                          style: smallText.copyWith(
                               fontWeight: regular, color: gray2),
-                          suffixIcon: Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 15.0),
-                            child: GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  _passwordVisible = !_passwordVisible;
-                                });
-                              },
-                              child: SvgPicture.asset(
-                                _passwordVisible
-                                    ? "assets/icons/Hideicon.svg"
-                                    : "assets/icons/Showicon.svg",
-                                color: gray1,
+                          obscureText: _passwordVisible,
+                          controller: passwordController,
+                          decoration: InputDecoration(
+                            filled: true,
+                            hintText: "Password",
+                            hintStyle: smallText.copyWith(
+                                fontWeight: regular, color: gray2),
+                            suffixIcon: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 15.0),
+                              child: GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    _passwordVisible = !_passwordVisible;
+                                  });
+                                },
+                                child: SvgPicture.asset(
+                                  _passwordVisible
+                                      ? "assets/icons/Hideicon.svg"
+                                      : "assets/icons/Showicon.svg",
+                                  colorFilter:
+                                      ColorFilter.mode(gray1, BlendMode.srcIn),
+                                ),
                               ),
                             ),
-                          ),
-                          suffixIconConstraints: BoxConstraints(maxHeight: 18),
-                          prefixIconConstraints:
-                              const BoxConstraints(maxHeight: 18),
-                          prefixIcon: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 25),
-                            child: SvgPicture.asset(
-                              "assets/icons/Lockicon.svg",
-                              height: 18,
-                              width: 18,
+                            suffixIconConstraints:
+                                BoxConstraints(maxHeight: 18),
+                            prefixIconConstraints:
+                                const BoxConstraints(maxHeight: 18),
+                            prefixIcon: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 15),
+                              child: SvgPicture.asset(
+                                "assets/icons/Lockicon.svg",
+                                height: 18,
+                                width: 18,
+                              ),
                             ),
+                            enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(14),
+                                borderSide: const BorderSide(
+                                    color: Colors.transparent, width: 0.0)),
+                            prefixIconColor: gray1,
+                            focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(14),
+                                borderSide: const BorderSide(
+                                    color: Colors.transparent, width: 0.0)),
+                            fillColor: borderColor,
                           ),
-                          enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(14),
-                              borderSide: const BorderSide(
-                                  color: Colors.transparent, width: 0.0)),
-                          prefixIconColor: gray1,
-                          focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(14),
-                              borderSide: const BorderSide(
-                                  color: Colors.transparent, width: 0.0)),
-                          fillColor: borderColor,
                         ),
                       ),
                       const SizedBox(height: 10),
