@@ -2,7 +2,7 @@ import 'package:fitnest/onboarding/screens/onboarding.dart';
 import 'package:flutter/material.dart';
 import 'package:fitnest/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
+import 'package:fitnest/custom_widgets.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -31,29 +31,9 @@ class WelcomeScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                GestureDetector(
-                  onTap: () =>
-                      Get.to(Onboarding(), transition: Transition.rightToLeft),
-                  child: Container(
-                    height: 60,
-                    width: 315,
-                    decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.transparent.withOpacity(0.15),
-                              blurRadius: 22,
-                              offset: Offset(0, 10)),
-                        ],
-                        gradient: blueLinear,
-                        borderRadius: BorderRadius.circular(99)),
-                    child: Center(
-                      child: Text(
-                        "Get Started",
-                        style:
-                            largeText.copyWith(fontWeight: bold, color: white),
-                      ),
-                    ),
-                  ),
+                const CustomBlueButton(
+                  buttonText: "Get Started",
+                  page: Onboarding(),
                 )
               ],
             ),
