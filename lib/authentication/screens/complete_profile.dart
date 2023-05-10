@@ -187,7 +187,7 @@ class _CompleteProfileState extends State<CompleteProfile> {
                   )
                 ],
               ),
-              page: ChooseGoal())
+              function: () => Get.to(() => const ChooseGoal()))
         ],
       )),
     );

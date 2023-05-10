@@ -186,7 +186,7 @@ class _CreateAccountState extends State<CreateAccount> {
                       buttonText: Text("Register",
                           style: largeText.copyWith(
                               fontWeight: bold, color: white)),
-                      page: CompleteProfile(),
+                      function: () => Get.to(() => const CompleteProfile()),
                     ),
                     const SizedBox(height: 20),
                     Stack(

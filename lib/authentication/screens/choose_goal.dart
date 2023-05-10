@@ -120,7 +120,7 @@ class _ChooseGoalState extends State<ChooseGoal> {
                     "Confirm",
                     style: largeText.copyWith(fontWeight: bold, color: white),
                   ),
-                  page: RegistrationSuccess())
+                  function: () => Get.to(() => const RegistrationSuccess()))
             ],
           ),
         ),

@@ -45,7 +45,7 @@ class RegistrationSuccess extends StatelessWidget {
                   color: white,
                 ),
               ),
-              page: Home(),
+              function: () => Get.to(() => const Home()),
             ),
             const SizedBox(height: 40)
           ],

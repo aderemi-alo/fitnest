@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fitnest/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fitnest/widgets/custom_widgets.dart';
+import 'package:get/get.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -36,7 +37,7 @@ class WelcomeScreen extends StatelessWidget {
                     "Get Started",
                     style: largeText.copyWith(fontWeight: bold, color: white),
                   ),
-                  page: Onboarding(),
+                  function: () => Get.to(() => const Onboarding()),
                 )
               ],
             ),

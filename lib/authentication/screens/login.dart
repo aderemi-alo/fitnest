@@ -131,7 +131,7 @@ class _LoginState extends State<Login> {
                                   fontWeight: bold, color: white)),
                         ],
                       ),
-                      page: Home(),
+                      function: () => Get.to(() => const Home()),
                     ),
                     const SizedBox(height: 20),
                     Stack(
