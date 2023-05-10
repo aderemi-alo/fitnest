@@ -39,3 +39,10 @@ const TextStyle mediumText = TextStyle(fontFamily: "Poppins", fontSize: 14);
 const TextStyle smallText = TextStyle(fontFamily: "Poppins", fontSize: 12);
 
 const TextStyle caption = TextStyle(fontFamily: "Poppins", fontSize: 10);
+
+//Shadow for Cards and Buttons
+final BoxShadow shadow = BoxShadow(
+  color: Colors.transparent.withOpacity(0.15),
+  blurRadius: 22,
+  offset: const Offset(0, 10),
+);
