@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
-import 'onboarding/screens/welcome_screen.dart';
+import 'src/features/onboarding/screens/welcome_screen.dart';
 import 'package:get/get.dart';
-import 'constants.dart';
+import 'src/constants/constants.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+import 'package:fitnest/src/utils/theme/theme.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MainApp());
 }
 
@@ -13,26 +18,11 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      theme: ThemeData(
-        scaffoldBackgroundColor: white,
-        textTheme: TextTheme(
-          displayLarge: TextStyle(color: black),
-          displayMedium: TextStyle(color: black),
-          displaySmall: TextStyle(color: black),
-          headlineMedium: TextStyle(color: black),
-          headlineSmall: TextStyle(color: black),
-          titleLarge: TextStyle(color: black),
-          titleMedium: TextStyle(color: black),
-          titleSmall: TextStyle(color: black),
-          bodyLarge: TextStyle(color: black),
-          bodyMedium: TextStyle(color: black),
-          labelLarge: TextStyle(color: black),
-          bodySmall: TextStyle(color: black),
-          labelSmall: TextStyle(color: black),
-        ),
-      ),
+      theme: FitnestAppTheme.lightTheme,
       debugShowCheckedModeBanner: false,
       home: WelcomeScreen(),
+      defaultTransition: Transition.leftToRightWithFade,
+      transitionDuration: const Duration(milliseconds: 500),
     );
   }
 }
