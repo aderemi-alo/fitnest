@@ -1,3 +1,4 @@
+import 'package:fitnest/authentication/screens/create_account.dart';
 import 'package:fitnest/dashboard/home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -207,7 +208,7 @@ class _LoginState extends State<Login> {
                           )),
                       TextSpan(
                           recognizer: TapGestureRecognizer()
-                            ..onTap = () => Get.to(() => Login()),
+                            ..onTap = () => Get.to(() => CreateAccount()),
                           text: "Register",
                           style: mediumText.copyWith(
                               fontWeight: regular,

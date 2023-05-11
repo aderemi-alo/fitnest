@@ -39,7 +39,7 @@ class _ChooseGoalState extends State<ChooseGoal> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 40),
+          padding: const EdgeInsets.only(top: 40),
           child: Column(
             children: [
               Expanded(

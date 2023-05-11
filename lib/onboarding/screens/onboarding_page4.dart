@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:fitnest/constants.dart';
 import 'package:flutter_svg/svg.dart';
@@ -12,7 +11,7 @@ class OnboardingPage4 extends StatelessWidget {
       children: [
         SvgPicture.asset(
           "assets/images/onboarding4-character.svg",
-          width: 414,
+          width: MediaQuery.of(context).size.width,
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30),

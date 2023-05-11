@@ -11,7 +11,7 @@ class OnboardingPage3 extends StatelessWidget {
       children: [
         SvgPicture.asset(
           "assets/images/onboarding3-character.svg",
-          width: 414,
+          width: MediaQuery.of(context).size.width,
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30),

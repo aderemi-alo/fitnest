@@ -28,9 +28,9 @@ class _CompleteProfileState extends State<CompleteProfile> {
           Expanded(
             child: Column(
               children: [
-                Center(
-                  child: Image.asset("assets/images/complete-profile.png"),
-                ),
+                Expanded(
+                    child:
+                        SvgPicture.asset("assets/images/complete-profile.svg")),
                 SizedBox(height: 30),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 40),
@@ -144,7 +144,7 @@ class _CompleteProfileState extends State<CompleteProfile> {
                         children: [
                           Flexible(
                             child: CustomTextField(
-                              controller: weight,
+                              controller: height,
                               iconLocation: "assets/icons/Swap.svg",
                               hintText: "Your Height",
                             ),
@@ -172,6 +172,7 @@ class _CompleteProfileState extends State<CompleteProfile> {
               ],
             ),
           ),
+          SizedBox(height: 15),
           CustomBlueButton(
               buttonText: Row(
                 mainAxisAlignment: MainAxisAlignment.center,

@@ -139,40 +139,42 @@ class _CreateAccountState extends State<CreateAccount> {
                             ),
                           ),
                           SizedBox(width: 10),
-                          RichText(
-                            text: TextSpan(
-                              children: [
-                                TextSpan(
-                                  text: "By continuing you accept our ",
-                                  style: caption.copyWith(
-                                    color: gray2,
-                                    fontWeight: regular,
+                          Expanded(
+                            child: RichText(
+                              text: TextSpan(
+                                children: [
+                                  TextSpan(
+                                    text: "By continuing you accept our ",
+                                    style: caption.copyWith(
+                                      color: gray2,
+                                      fontWeight: regular,
+                                    ),
                                   ),
-                                ),
-                                TextSpan(
-                                  text: "Privacy Policy ",
-                                  style: caption.copyWith(
-                                    color: gray2,
-                                    fontWeight: regular,
-                                    decoration: TextDecoration.underline,
+                                  TextSpan(
+                                    text: "Privacy Policy ",
+                                    style: caption.copyWith(
+                                      color: gray2,
+                                      fontWeight: regular,
+                                      decoration: TextDecoration.underline,
+                                    ),
                                   ),
-                                ),
-                                TextSpan(
-                                  text: "and ",
-                                  style: caption.copyWith(
-                                    color: gray2,
-                                    fontWeight: regular,
+                                  TextSpan(
+                                    text: "and ",
+                                    style: caption.copyWith(
+                                      color: gray2,
+                                      fontWeight: regular,
+                                    ),
                                   ),
-                                ),
-                                TextSpan(
-                                  text: "Term of Use.",
-                                  style: caption.copyWith(
-                                    color: gray2,
-                                    fontWeight: regular,
-                                    decoration: TextDecoration.underline,
+                                  TextSpan(
+                                    text: "Term of Use.",
+                                    style: caption.copyWith(
+                                      color: gray2,
+                                      fontWeight: regular,
+                                      decoration: TextDecoration.underline,
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ],

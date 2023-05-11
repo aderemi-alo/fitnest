@@ -47,7 +47,6 @@ class RegistrationSuccess extends StatelessWidget {
               ),
               function: () => Get.to(() => const Home()),
             ),
-            const SizedBox(height: 40)
           ],
         ),
       ),
