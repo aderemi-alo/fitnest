@@ -1,5 +1,7 @@
+import 'package:fitnest/src/features/authentication/controllers/login_controller.dart';
 import 'package:fitnest/src/features/authentication/screens/signup/signup_screen.dart';
-import 'package:fitnest/src/features/dashboard/home.dart';
+import 'package:fitnest/src/features/dashboard/dashboard.dart';
+import 'package:fitnest/src/repository/authentication_repository/authentication_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:fitnest/src/constants/constants.dart';
@@ -7,16 +9,15 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fitnest/src/reusable_widgets/reusable_widgets.dart';
 import 'package:flutter/gestures.dart';
 
-class Login extends StatefulWidget {
-  const Login({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginState extends State<Login> {
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+class _LoginScreenState extends State<LoginScreen> {
+  final controller = Get.put(LoginController());
 
   bool _passwordVisible = false;
 
@@ -46,7 +47,7 @@ class _LoginState extends State<Login> {
                       ),
                       const SizedBox(height: 30),
                       CustomTextField(
-                        controller: emailController,
+                        controller: controller.emailController,
                         iconLocation: "assets/icons/Messageicon.svg",
                         hintText: "Email",
                       ),
@@ -58,7 +59,7 @@ class _LoginState extends State<Login> {
                           style: smallText.copyWith(
                               fontWeight: regular, color: gray2),
                           obscureText: _passwordVisible,
-                          controller: passwordController,
+                          controller: controller.passwordController,
                           decoration: InputDecoration(
                             filled: true,
                             hintText: "Password",
@@ -132,7 +133,12 @@ class _LoginState extends State<Login> {
                                   fontWeight: bold, color: white)),
                         ],
                       ),
-                      function: () => Get.to(() => const Home()),
+                      function: () {
+                        AuthenticationRepository.instance
+                            .loginWithEmailAndPassword(
+                                controller.emailController.text.trim(),
+                                controller.passwordController.text.trim());
+                      },
                     ),
                     const SizedBox(height: 20),
                     Stack(
@@ -208,7 +214,7 @@ class _LoginState extends State<Login> {
                           )),
                       TextSpan(
                           recognizer: TapGestureRecognizer()
-                            ..onTap = () => Get.to(() => SignUpScreen()),
+                            ..onTap = () => Get.to(() => const SignUpScreen()),
                           text: "Register",
                           style: mediumText.copyWith(
                               fontWeight: regular,
