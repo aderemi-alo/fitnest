@@ -1,4 +1,4 @@
-import 'package:fitnest/src/features/dashboard/home.dart';
+import 'package:fitnest/src/features/dashboard/dashboard.dart';
 import 'package:fitnest/src/reusable_widgets/reusable_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:fitnest/src/constants/constants.dart';
@@ -45,7 +45,7 @@ class RegistrationSuccess extends StatelessWidget {
                   color: white,
                 ),
               ),
-              function: () => Get.to(() => const Home()),
+              function: () => Get.to(() => const Dashboard()),
             ),
           ],
         ),
